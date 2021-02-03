@@ -1,15 +1,15 @@
-public static class Utilidades{
+public class Utilidades{
   //julio si ves esto necesito que hagas metodos para obtener las
   //decenas, centenas y unidades de la puntuacion actual
   //esto para poder cambiar y actualizar con eventos el numero
   //en pantalla de puntuacion
-  public int unidades(int score){
-
+  public static int unidades(int score){
+    return 0;
   }
-  public int decenas(int score){
-
+  public static int decenas(int score){
+    return 0;
   }
-  public int centenas(int score){
-
+  public static int centenas(int score){
+    return 0;
   }
 }

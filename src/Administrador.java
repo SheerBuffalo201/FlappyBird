@@ -2,7 +2,7 @@ import java.io.File;
 import java.util.ArrayList;
 
 public class Administrador{
-  public final static String RUTA_IMAGENES="./src/imagenes/";
+  public final static String RUTA_IMAGENES="./imagenes/";
   File dirImagenes = new File(RUTA_IMAGENES);
 	ArrayList<String> listaImagenes = new ArrayList<String>();
 

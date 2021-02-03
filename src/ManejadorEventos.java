@@ -30,7 +30,7 @@ public class ManejadorEventos implements ActionListener{
       //pajaro vuela
     }
 	}
-  public void reloj
+  //public void reloj
 
   public void setVentanaJuego(VentanaJuego ventana){
 		this.ventanaJuego = ventana;
