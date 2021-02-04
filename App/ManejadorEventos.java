@@ -1,4 +1,4 @@
-package App; 
+package App;
 import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -22,13 +22,11 @@ public class ManejadorEventos implements ActionListener{
       //show archivo de puntuaciones
     }
   }
-	
+
 	public void keyReleased(KeyEvent e){
 		if(e.getKeyCode()==32){
-      //if(juego aun no empieza){
-        //empieza
-      //}else
-      //pajaro vuela
+      System.out.println("apretado");
+      ventanaJuego.IniciarJuego();
     }
 	}
   //public void reloj
