@@ -1,4 +1,4 @@
-package App; 
+package App;
 import javax.swing.*;
 import java.awt.Image;
 import java.awt.event.ActionListener;
@@ -12,12 +12,12 @@ public class VentanaJuego extends JFrame{
   private JPanel panelJuego= new JPanel();
   private JPanel panelPuntuacion= new JPanel();
   private ManejadorEventos manejador;
-  
+
   //estos son los jlabel de la puntuacion
   public JLabel imgUnidades;
   public JLabel imgDecenas;
   public JLabel imgCentenas;
-  
+
   public VentanaJuego(ManejadorEventos manejador){
     super();
     this.manejador=manejador;
@@ -38,13 +38,13 @@ public class VentanaJuego extends JFrame{
     this.setTitle("Flappy Bat");
     this.setSize(960,600);
     this.setLocationRelativeTo(null);
-		
+
     this.setLayout(new BorderLayout());
     this.setResizable(false);
 
     this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
   }
-  
+
   //aqui se construyen dos paneles, uno para la puntuacion y uno para el juego en si
   public void agregarPanel(){
 
@@ -58,8 +58,8 @@ public class VentanaJuego extends JFrame{
 		this.panelJuego.setBackground(Color.CYAN);
 		this.panelPuntuacion.setLayout(new FlowLayout());
 		this.panelPuntuacion.setBackground(Color.GREEN);
-	
-    //se añaden los paneles al JFrame y panel interior 
+
+    //se añaden los paneles al JFrame y panel interior
 		panelMedioInterior.add(this.panelJuego,BorderLayout.CENTER);
 		this.add(this.panelPuntuacion,BorderLayout.NORTH);
 	}
@@ -70,8 +70,8 @@ public class VentanaJuego extends JFrame{
     this.personaje.setBounds(30,275,50,50);
     this.personaje.setIcon(Utilidades.resizeImage(Administrador.RUTA_IMAGENES+"monoPrueba.png", 50, 50));
     this.panelJuego.add(this.personaje);
-    
-    
+
+
     imgCentenas.setBounds(750, 20, 50, 65);
     imgDecenas.setBounds(810, 20, 50, 65);
     imgUnidades.setBounds(870, 20, 50, 65);
@@ -79,7 +79,7 @@ public class VentanaJuego extends JFrame{
     this.panelPuntuacion.add(imgDecenas);
     this.panelPuntuacion.add(imgUnidades);
   }
-  
+
   public void crearEtiquetaImagen(String ruta, int x, int y, int largo, int ancho){
     JLabel etiqueta = new JLabel();
 		etiqueta.setBounds(x,y,largo,ancho);
