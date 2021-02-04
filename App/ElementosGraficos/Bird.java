@@ -1,11 +1,13 @@
 package App.ElementosGraficos;
-import App.*;
 import javax.swing.*;
-
+import App.*;
 
 public class Bird extends JLabel{
 
-  //private Player player;
+  //Este sí es importante porque allí se guarda el puntaje
+  //que se escribirá en el archivo
+  private Player player;
+
   private int x=0;
   private int y=0;
   private int yvel=15;
@@ -18,9 +20,9 @@ public class Bird extends JLabel{
   }
 
   public void crearPersonaje(){
-    this.setBounds(this.x,this.y,50,50);
-    this.setIcon(Utilidades.resizeImage(Administrador.RUTA_IMAGENES+"murcielago.png", 50, 50));
-  }
+      this.setBounds(this.x,this.y,50,50);
+      this.setIcon(Utilidades.resizeImage(Administrador.RUTA_IMAGENES+"murcielago.png", 50, 50));
+    }
 
   public void mover(int dis){
     int min = 0;

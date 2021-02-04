@@ -1,5 +1,5 @@
+package App;
 import java.io.Serializable;
-
 /**
 @author
 **/
@@ -9,9 +9,9 @@ public class Player implements Comparable<Player>, Serializable{
   private int score;
 
   /**
-  Constructor que inicializa los datos del jugador 
+  Constructor que inicializa los datos del jugador
   @param name Nombre del jugador
-  @param score Puntaje 
+  @param score Puntaje
   **/
   public Player(String name, int score){
     this.name = name;
@@ -19,8 +19,8 @@ public class Player implements Comparable<Player>, Serializable{
   }
 
   /**
-  Modificar su puntaje 
-  @param score Nuevo puntaje 
+  Modificar su puntaje
+  @param score Nuevo puntaje
   **/
   public void setScore(int score){
     this.score = score;
@@ -28,14 +28,14 @@ public class Player implements Comparable<Player>, Serializable{
 
   /**
   Modificar su nombre
-  @param score Nuevo nombre  
+  @param score Nuevo nombre
   **/
   public void setName(String name){
     this.name = name;
   }
 
   /**
-  Obtener su puntaje 
+  Obtener su puntaje
   @return Puntaje actual
   **/
   public int getScore(){
@@ -57,7 +57,7 @@ public class Player implements Comparable<Player>, Serializable{
 
   /**
   Obtener su nombre
-  @param player 
+  @param player
   **/
   @Override
   public int compareTo(Player p){

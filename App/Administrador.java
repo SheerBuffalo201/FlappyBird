@@ -1,4 +1,4 @@
-package App; 
+package App;
 import java.io.File;
 import java.util.ArrayList;
 
@@ -8,7 +8,7 @@ public class Administrador{
 	ArrayList<String> listaImagenes = new ArrayList<String>();
 
 
-  
+
   public boolean buscarImagenes(){
 		String[] cadenaImagenes = dirImagenes.list();
 
