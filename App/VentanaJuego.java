@@ -1,4 +1,5 @@
 package App;
+import App.ElementosGraficos.*;
 import javax.swing.*;
 import java.awt.Image;
 import java.awt.event.ActionListener;
@@ -8,9 +9,11 @@ import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
 import java.awt.*;
 
+
 public class VentanaJuego extends JFrame{
   //atributos
-  private JLabel personaje; //este habria que cambiarlo por el que haga emy
+  private Bird personaje;
+  public Timer tiempo;
   private JPanel panelJuego= new JPanel();
   private JPanel panelPuntuacion= new JPanel();
   private ManejadorEventos manejador;
@@ -33,6 +36,7 @@ public class VentanaJuego extends JFrame{
 		this.agregarPanel();
 		this.agregarComponentes();
     this.setVisible(true);
+    tiempo= new Timer(40, manejador);
   }
 
   //aqui se instancia el JFrame con su titulo, tamaño y layout
@@ -67,10 +71,9 @@ public class VentanaJuego extends JFrame{
 
   public void agregarComponentes(){
     //aqui estoy instanciando y añadiendo el personaje pero se va a cambiar por lo de Emy
-    this.personaje = new JLabel();
-    this.personaje.setBounds(30,275,50,50);
-    this.personaje.setIcon(Utilidades.resizeImage(Administrador.RUTA_IMAGENES+"monoPrueba.png", 50, 50));
+    this.personaje = new Bird();
     this.panelJuego.add(this.personaje);
+    this.manejador.setBird(personaje);
 
     imgCentenas= crearEtiquetaPuntuacion(Administrador.RUTA_IMAGENES+"0.png",750, 20, 50, 65);
     imgDecenas= crearEtiquetaPuntuacion(Administrador.RUTA_IMAGENES+"0.png",810, 20, 50, 65);
@@ -112,5 +115,9 @@ public class VentanaJuego extends JFrame{
       }
       revalidarFrame();
     }
+  }
+  public void moverPajaro(){
+    personaje.muevete();
+    personaje.repaint();
   }
 }
