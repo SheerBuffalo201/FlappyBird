@@ -1,3 +1,4 @@
+package App; 
 import javax.swing.*;
 import java.awt.Image;
 import java.awt.event.ActionListener;
@@ -65,9 +66,9 @@ public class VentanaJuego extends JFrame{
 
   public void agregarComponentes(){
     //aqui estoy instanciando y añadiendo el personaje pero se va a cambiar por lo de Emy
-    this.personaje= new JLabel();
+    this.personaje = new JLabel();
     this.personaje.setBounds(30,275,50,50);
-    this.personaje.setIcon(ResizeImage(Administrador.RUTA_IMAGENES+"monoPrueba.png", 50, 50));
+    this.personaje.setIcon(Utilidades.resizeImage(Administrador.RUTA_IMAGENES+"monoPrueba.png", 50, 50));
     this.panelJuego.add(this.personaje);
     
     
@@ -82,18 +83,9 @@ public class VentanaJuego extends JFrame{
   public void crearEtiquetaImagen(String ruta, int x, int y, int largo, int ancho){
     JLabel etiqueta = new JLabel();
 		etiqueta.setBounds(x,y,largo,ancho);
-    etiqueta.setIcon(ResizeImage(ruta, largo, ancho));
+    etiqueta.setIcon(Utilidades.resizeImage(ruta, largo, ancho));
 		this.panelPuntuacion.add(etiqueta);
   }
-
-  public ImageIcon ResizeImage(String ImagePath, int largo, int ancho)
-    {
-        ImageIcon MyImage = new ImageIcon(ImagePath);
-        Image img = MyImage.getImage();
-        Image newImg = img.getScaledInstance(largo, ancho, Image.SCALE_SMOOTH);
-        ImageIcon image = new ImageIcon(newImg);
-        return image;
-    }
 
   public void revalidarFrame(){
     revalidate();

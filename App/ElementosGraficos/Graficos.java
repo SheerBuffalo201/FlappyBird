@@ -1,7 +1,7 @@
-package ElementosGraficos; 
+package App.ElementosGraficos; 
 import javax.swing.JLabel;
 
-public class Graficos{
+public abstract class Graficos{
   protected int x; 
   protected int y; 
   protected int ancho; 
@@ -15,5 +15,5 @@ public class Graficos{
     this.ancho = ancho; 
   }
 
-  abstract mover(int dis);
+  abstract boolean mover(int dis);
 }

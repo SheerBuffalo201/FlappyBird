@@ -1,11 +1,14 @@
-package ElementosGraficos;  
+package App.ElementosGraficos;  
+import javax.swing.*;
+import java.awt.Image;
+import App.*;
 
 public class Obstaculo extends Graficos{
   private int y2;
   private JLabel imagen2; 
   private int largo2; //sí va bien o crees que le falta algo? 
 
-  public Obstaculo(int x, int y, int y2, int largo, int largo2){
+  public Obstaculo(int x, int y, int y2, int largo, int largo2, int ancho){
     super(x,y, largo, ancho); 
     this.y2 = y2; 
     this.largo2 = largo2; 
@@ -20,21 +23,13 @@ public class Obstaculo extends Graficos{
     this.imagen.setIcon(ResizeImage(Administrador.RUTA_IMAGENES+"Ruta",largo2,ancho));
   }
 
-  public boolean mover(int dis){
+  public boolean mover(int dis){//si llegó al final debe eliminarse  
     this.x -= dis;  
 
-    //si es menor que 0 debe eliminarse el objeto, no? 
-//que significa el simbolo de pregunta? es un operador ternario 
-    /*
-    if(condicion)
-      x = min
-    else 
-      x = max
-    ¨es eso pero en chiquito oye jajaja me di cuenta que solo necesita el min porque solo avanza xd*/
     this.imagen.setBounds(this.x,this.y,largo,ancho);
     this.imagen2.setBounds(this.x,this.y2,largo2,ancho);
 
-    return (this.x < 0) ? true : false;
+    return (this.x < (-1)*this.ancho) ? true : false;
   }
 
 }

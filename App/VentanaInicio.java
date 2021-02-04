@@ -1,3 +1,4 @@
+package App; 
 import javax.swing.*;
 import java.awt.Image;
 import java.awt.event.ActionListener;
@@ -63,19 +64,12 @@ public class VentanaInicio extends JFrame{
     //tamaño y coordenadas
 		etiqueta.setBounds(x,y,largo,ancho);
     //pegar imagen
-    etiqueta.setIcon(ResizeImage(ruta, largo, ancho));
+    etiqueta.setIcon(Utilidades.resizeImage(ruta, largo, ancho));
     //se añade al panel
 		this.panel.add(etiqueta);
   }
   //este metodo convierte la imagen en un icon para el jlabel y le cambia el tamaño
-  public ImageIcon ResizeImage(String ImagePath, int largo, int ancho)
-    {
-        ImageIcon MyImage = new ImageIcon(ImagePath);
-        Image img = MyImage.getImage();
-        Image newImg = img.getScaledInstance(largo, ancho, Image.SCALE_SMOOTH);
-        ImageIcon image = new ImageIcon(newImg);
-        return image;
-    }
+  
   //getters
   public JButton getBotonInicio(){
     return this.iniciarJuego;

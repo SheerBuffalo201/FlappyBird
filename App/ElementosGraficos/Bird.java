@@ -1,4 +1,6 @@
-package ElementosGraficos; 
+package App.ElementosGraficos; 
+import javax.swing.*;
+
 
 public class Bird extends Graficos{
 
