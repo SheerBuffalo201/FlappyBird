@@ -1,10 +1,11 @@
-package App; 
+package App;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.File;
 import java.util.Arrays;
+import javax.swing.JOptionPane;
 
 /**
 Clase para acceder y manipular los puntajes más altos.
@@ -23,7 +24,7 @@ public class Scores{
   public Scores(){
     size = 5;
     scores = new Player[size];
-    fileName = ".\\src\\scores.ooo";
+    fileName = "Fuentes\\scores.ooo";
     readScores();
   }
 
@@ -33,6 +34,7 @@ public class Scores{
   Se deserializan los objetos
   */
   private void readScores(){
+    System.out.println(this.fileName);
     try{
       File file = new File(this.fileName);
       if(!file.createNewFile()){
@@ -50,7 +52,8 @@ public class Scores{
         writeScores();
       }
     }catch(Exception e){
-      System.out.printf("Algo salió mal :c");
+
+      System.out.printf("1Algo salió mal :c" + e.getMessage());
     }
   }
 
@@ -83,7 +86,7 @@ public class Scores{
       outF.close();
 
     }catch(Exception e){
-      System.out.printf("Algo salió mal :c");
+      System.out.printf("2Algo salió mal :c");
     }
   }
 
@@ -93,6 +96,14 @@ public class Scores{
   **/
   public Player[] getScores(){
     return scores;
+  }
+
+  public void mostrarPuntos(){
+    String puntos = new String();
+    for(int i = 0; i < size; i++){
+      puntos = puntos.concat(i+". "+scores[i].toString()+"\n");
+    }
+    JOptionPane.showMessageDialog(null,puntos, "=SCORES=", JOptionPane.INFORMATION_MESSAGE);
   }
 
 }

@@ -17,11 +17,14 @@ public class ManejadorEventos implements ActionListener{
 
   public void actionPerformed(ActionEvent e){
     if(e.getSource()==this.ventanaInicio.getBotonInicio()){
-      VentanaJuego ventanaJuego= new VentanaJuego(this);
+      System.out.println("Julio se la come");
+      VentanaJuego ventanaJuego = new VentanaJuego(this);
       this.ventanaInicio.dispose();
     }
-    else if(e.getSource()== this.ventanaInicio.getBotonPuntuacion()){
-      //show archivo de puntuaciones
+    else if(e.getSource() == this.ventanaInicio.getBotonPuntuacion()){
+      System.out.println("Julio se la comeeee");
+      Scores sc = new Scores();
+      sc.mostrarPuntos();
     }else{
       ventanaJuego.moverPajaro();
       System.out.println("Julio se la come");

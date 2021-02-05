@@ -1,4 +1,4 @@
-package App; 
+package App;
 import javax.swing.*;
 import java.awt.Image;
 import java.awt.event.ActionListener;
@@ -28,7 +28,7 @@ public class VentanaInicio extends JFrame{
     this.setSize(960,540);
     this.setLocationRelativeTo(null);
     this.setResizable(false);
-    
+
     this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		this.crearPanel();
   }
@@ -43,7 +43,7 @@ public class VentanaInicio extends JFrame{
     this.crearEtiquetaImagen(Administrador.RUTA_IMAGENES+"titulo.png", 100, 100, 480, 270);
     //el manejador de eventos funciona como ActionListener
     ManejadorEventos manejador = new ManejadorEventos(this);
-    
+
     // este es la creacion del boton iniciarJuego y se añade al manejador de eventos
     this.iniciarJuego= new JButton("Iniciar Juego");
     this.iniciarJuego.setBounds(350, 280, 100,120);
@@ -54,7 +54,7 @@ public class VentanaInicio extends JFrame{
     this.puntuaciones= new JButton("Puntuaciones");
     this.puntuaciones.setBounds(520, 280, 100,120);
 		this.puntuaciones.addActionListener(manejador);
-		this.puntuaciones.setEnabled(false);
+		this.puntuaciones.setEnabled(true);
 		this.panel.add(this.puntuaciones);
   }
   //este metodo es para crear JLabel de imagenes
@@ -69,7 +69,7 @@ public class VentanaInicio extends JFrame{
 		this.panel.add(etiqueta);
   }
   //este metodo convierte la imagen en un icon para el jlabel y le cambia el tamaño
-  
+
   //getters
   public JButton getBotonInicio(){
     return this.iniciarJuego;
